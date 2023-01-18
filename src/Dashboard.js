@@ -19,6 +19,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Graph from './Chart';
+import Map from './Map';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
 
@@ -176,9 +177,21 @@ function DashboardContent() {
                                 </Paper>
                             </Grid> */}
                             {/* Recent Orders */}
-                            <Grid item xs={12}>
+                            {/* <Grid item xs={12}>
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                    {/* <Orders /> */}
+                                    <Orders />
+                                </Paper>
+                            </Grid> */}
+                            <Grid item xs={12} md={8} lg={12}>
+                                <Paper
+                                    sx={{
+                                        p: 2,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        height: 480,
+                                    }}
+                                >
+                                    <Map />
                                 </Paper>
                             </Grid>
                         </Grid>

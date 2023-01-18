@@ -156,7 +156,7 @@ export default function Chart(props) {
 
     return (
         <React.Fragment>
-            <Title>Today</Title>
+            <Title>Metrics</Title>
             <ResponsiveContainer>
                 <LineChart
                     data={data}
@@ -171,19 +171,12 @@ export default function Chart(props) {
                         dataKey="time"
                         stroke={theme.palette.text.secondary}
                         style={theme.typography.body2}
+                        label={{
+                            value: "Time",
+                            dy: 20,
+                            position:"insideBottomRight"
+                        }}
                     >
-                        <Label
-                            angle={0}
-                            position="center"
-                            style={{
-                                textAnchor: 'middle',
-                                fill: theme.palette.text.primary,
-                                ...theme.typography.body1,
-                            }}
-                            
-                        >
-                            Time
-                        </Label>
                     </XAxis>
                     <YAxis
                         stroke={theme.palette.text.secondary}
@@ -201,6 +194,7 @@ export default function Chart(props) {
                         dot={false}
                         fill={theme.palette.primary.main}
                         fillOpacity={0.7}
+                        name="Efficiency"
                     />
                     <Line
                         isAnimationActive={false}
@@ -210,6 +204,7 @@ export default function Chart(props) {
                         dot={false}
                         fill={theme.palette.secondary.main}
                         fillOpacity={0.7}
+                        name="CPU Usage"
                     />
                     <Line
                         isAnimationActive={false}
@@ -219,6 +214,7 @@ export default function Chart(props) {
                         dot={false}
                         fill={theme.palette.success.main}
                         fillOpacity={0.7}
+                        name="Load average"
                     />
                 </LineChart>
             </ResponsiveContainer>
